@@ -1,0 +1,10 @@
+f = 1000;
+fs = 8192;
+y = 1 - 1/fs;
+t = 0:1/fs:y;
+x = sin(2*pi*f*t);
+a = fft(x);
+z = fftshift(a);
+nf = fs./2*linspace(-1,1,fs);
+m = abs(z);
+plot(nf,m);
